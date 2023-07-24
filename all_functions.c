@@ -73,12 +73,15 @@ fun_type get_function(char format)
 		{'i', _putd},
 		{'%', _putcc},
 		{'p', _putp},
-		{' ', _empty}
+		{'u', _putU},
+		{'x', _putx},
+		{'X', _putX},
+		{'o', _puto}
 	};
 
 	int i = 0;
 
-	while (i < 7)
+	while (i < 10)
 	{
 		if (g[i].p == format)
 			return (g[i]);

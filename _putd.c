@@ -3,10 +3,37 @@
 #include <stdarg.h>
 #include "main.h"
 
-/**
- * case_min - handle minStr[]
- * Return: 11
- */
+int _putU(va_list args)
+{
+	char buffer[20];
+	int pos = 0;
+	unsigned int num = va_arg(args, unsigned int);
+	int n = 0;
+
+	if (num == 0)
+	{
+		n++;
+		_putchar('0');
+		return n;
+	}
+
+	while (num != 0)
+	{
+		buffer[pos] = '0' + (num % 10);
+		num /= 10;
+		pos++;
+	}
+
+	while (pos > 0)
+	{
+		pos--;
+		n++;
+		_putchar(buffer[pos]);
+	}
+
+	return n;
+}
+
 int case_min(void)
 {
 	char minStr[] = "-2147483648";

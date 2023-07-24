@@ -11,7 +11,6 @@ int _printf(const char *format, ...)
 	va_list list;
 	fun_type fun;
 	int num;
-
 	num = 0;
 
 	va_start(list, format);
@@ -19,7 +18,7 @@ int _printf(const char *format, ...)
 		return (-1);
 	while (*format)
 	{
-		if (*format == '%' && *(format + 1) != '\0')
+		if (*format == '%' && *(format + 1) != '\0' &&  *(format + 1) != ' ')
 		{
 			format++;
 			fun = get_function(*format);
