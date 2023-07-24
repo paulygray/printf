@@ -69,12 +69,13 @@ fun_type get_function(char format)
 		{'u', _putU},
 		{'x', _putx},
 		{'X', _putX},
-		{'o', _puto}
+		{'o', _puto},
+		{'b', _putbinary}
 	};
 
 	int i = 0;
 
-	while (i < 10)
+	while (i < 11)
 	{
 		if (g[i].p == format)
 			return (g[i]);
