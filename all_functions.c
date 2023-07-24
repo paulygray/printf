@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include <unistd.h>
+
 /**
  * _putc - function prints chars
  *@args: valist type arguments
@@ -13,6 +14,7 @@ int  _putc(va_list args)
 
 	return (_putchar(c));
 }
+
 /**
  * _putcc - function prints %
  *@args: valist type arguments
@@ -25,6 +27,7 @@ int _putcc(va_list args)
 	c = '%';
 	return (_putchar(c));
 }
+
 /**
  * _puts - function prints strings
  *@args: valist type arguments
@@ -37,16 +40,27 @@ int _puts(va_list args)
 
 	if (s == NULL)
 		s = "(null)";
-	if (s)
+
+	while (*s)
 	{
-		while (*s)
-		{
-			_putchar(*s);
-			s++;
-			num++;
-		}
+		_putchar(*s);
+		s++;
+		num++;
 	}
 	return (num);
+}
+
+/**
+ * _empty - empty quote function
+ * @args: param
+ *
+ * Return: -2
+ */
+int _empty(va_list args)
+{
+	va_arg(args, int);
+
+	return (-1);
 }
 
 fun_type get_function(char format)
@@ -58,12 +72,13 @@ fun_type get_function(char format)
 		{'d', _putd},
 		{'i', _putd},
 		{'%', _putcc},
-		{'p', _putp}
+		{'p', _putp},
+		{' ', _empty}
 	};
 
 	int i = 0;
 
-	while (i < 6)
+	while (i < 7)
 	{
 		if (g[i].p == format)
 			return (g[i]);
