@@ -1,21 +1,29 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include "main.h"
-void _putd(va_list args)
+/**
+ * _putd - function prints digits
+ * @args:  va_list type
+ * Return: number of digits
+ */
+int _putd(va_list args)
 {
 	char buffer[20];
 	int pos = 0;
 	int num = va_arg(args, int);
+	int n = 0;
 
 
 	if (num == 0)
 	{
+		n++;
 		_putchar('0');
-		return;
+		return (n);
 	}
 
 	if (num < 0)
 	{
+		n++;
 		_putchar('-');
 		num = -num;
 	}
@@ -31,7 +39,9 @@ void _putd(va_list args)
 	while (pos > 0)
 	{
 		pos--;
+		n++;
 		_putchar(buffer[pos]);
 	}
+	return (n);
 }
 

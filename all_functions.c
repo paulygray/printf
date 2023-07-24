@@ -2,20 +2,39 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include <unistd.h>
-void _putc(va_list args)
+/**
+ * _putc - function prints chars
+ *@args: valist type arguments
+ * Return: int num of printed
+ */
+int  _putc(va_list args)
 {
 	char c = va_arg(args, int);
-	_putchar(c);
+
+	return (_putchar(c));
 }
-void _putcc(va_list args)
+/**
+ * _putcc - function prints %
+ *@args: valist type arguments
+ * Return: int num of printed
+ */
+int _putcc(va_list args)
 {
 	char c = va_arg(args, int);
+
 	c = '%';
-	_putchar(c);
+	return (_putchar(c));
 }
-void _puts(va_list args)
+/**
+ * _puts - function prints strings
+ *@args: valist type arguments
+ * Return: int num of printed
+ */
+int _puts(va_list args)
 {
+	int num = 0;
 	char *s = va_arg(args, char *);
+
 	if (s == NULL)
 		s = "(null)";
 	if (s)
@@ -24,8 +43,10 @@ void _puts(va_list args)
 		{
 			_putchar(*s);
 			s++;
+			num++;
 		}
 	}
+	return (num);
 }
 
 fun_type get_function(char format)
@@ -41,12 +62,13 @@ fun_type get_function(char format)
 	};
 
 	int i = 0;
+
 	while (i < 6)
 	{
 		if (g[i].p == format)
-			return g[i];
+			return (g[i]);
 
 		i++;
 	}
-	return empty;
+	return (empty);
 }

@@ -6,10 +6,8 @@
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
  */
-extern int num;
 
 int _putchar(char c)
 {
-	num++;
 	return (write(1, &c, 1));
 }
