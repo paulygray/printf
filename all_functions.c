@@ -51,18 +51,11 @@ int _puts(va_list args)
 }
 
 /**
- * _empty - empty quote function
- * @args: param
+ * get_function - function
+ * @format: param
  *
- * Return: -2
+ * Return: function
  */
-int _empty(va_list args)
-{
-	va_arg(args, int);
-
-	return (-1);
-}
-
 fun_type get_function(char format)
 {
 	fun_type empty = {'\0', NULL};
