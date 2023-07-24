@@ -11,6 +11,7 @@ int _printf(const char *format, ...)
 	va_list list;
 	fun_type fun;
 	int num;
+
 	num = 0;
 
 	va_start(list, format);

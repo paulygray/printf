@@ -3,6 +3,10 @@
 #include <stdarg.h>
 #include "main.h"
 
+/**
+ * case_min - handle minStr[]
+ * Return: 11
+ */
 int case_min(void)
 {
 	char minStr[] = "-2147483648";
