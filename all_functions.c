@@ -70,12 +70,14 @@ fun_type get_function(char format)
 		{'x', _putx},
 		{'X', _putX},
 		{'o', _puto},
-		{'b', _putbinary}
+		{'b', _putbinary},
+		{'r', _putr}
 	};
 
-	int i = 0;
+	size_t i = 0;
+	size_t length = sizeof(g) / sizeof(g[0]);
 
-	while (i < 11)
+	while (i < length)
 	{
 		if (g[i].p == format)
 			return (g[i]);

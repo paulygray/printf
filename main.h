@@ -11,7 +11,8 @@ typedef struct fun
 	char p;
 	int (*call)(va_list);
 } fun_type;
-
+ void _print_rev_recursion(char *s, int n);
+int _putr(va_list args);
 int _putchar(char c);
 int _puts(va_list args);
 int _putp(va_list args);
