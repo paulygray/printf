@@ -14,7 +14,7 @@ int main(void)
 	int ZERO = 0;
 	
 
-	num1 = _printf("A %r sentence\n", "simple");
+	num1 = _printf("%r\n", "simple");
 	num2 = printf("A %r sentence\n", "simple");
 	printf("Len:[%d]\n", num1);
 	printf("Len1:[%d]\n\n", num2);
