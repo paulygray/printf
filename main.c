@@ -9,9 +9,8 @@
  */
 int main(void)
 {
-	int n;
-	
-	n = _printf("%S\n", "BestSchool");
-	printf("%d\n", n);
+	char s[] = "ROT13 (\"rotate by 13 places\", sometimes hyphenated ROT-13) is a simple letter substitution cipher.\n";
+
+	_printf("%R\n", s);
 	return (0);
 }

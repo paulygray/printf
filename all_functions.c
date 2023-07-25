@@ -72,7 +72,8 @@ fun_type get_function(char format)
 		{'o', _puto},
 		{'b', _putbinary},
 		{'r', _putr},
-		{'S', _putS}
+		{'S', _putS},
+		{'R', rot13}
 	};
 
 	size_t i = 0;

@@ -25,4 +25,5 @@ int _putx(va_list args);
 int _putX(va_list args);
 int _puto(va_list args);
 int _putS(va_list args);
+int rot13(va_list args);
 #endif
