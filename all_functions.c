@@ -83,8 +83,8 @@ fun_type get_function(char format)
 	{
 		if (g[i].p == format)
 			return (g[i]);
-
 		i++;
 	}
 	return (empty);
 }
+
