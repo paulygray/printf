@@ -11,8 +11,8 @@ int _printf(const char *format, ...)
 	va_list list;
 	fun_type fun;
 	int num;
-
 	num = 0;
+
 	va_start(list, format);
 	if (format == NULL)
 		return (-1);
@@ -26,15 +26,13 @@ int _printf(const char *format, ...)
 			{
 				num += fun.call(list);
 				format++;
-				_putchar(*format);
 			}
 			else
 			{
 				format--;
 				num += _putchar(*format);
 				format++;
-			} 
-			
+			}
 		}
 		else if (*format != '%')
 		{
