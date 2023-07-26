@@ -3,12 +3,15 @@
 #include <string.h>
 int helper(char *f)
 {
+
+
 	int i = 0;
+
 	if (f == NULL)
 		return (i);
 	if (*f == '+' || *f == '#' || *f == ' ')
 		i = 1;
-	else if(*(f + 1) == 'd')
+	else if(*(f + 1) == 'd' || *(f + 1) == 'o' || *(f + 1) == 'x' || *(f + 1) == 'X' || *(f + 1) == 'i')
 		return (i);
 	return (i);
 }
@@ -33,7 +36,7 @@ int _printf(const char *format, ...)
 		return (-1);
 	while (*ptr)
 	{
-		if (*ptr == '%' && *(ptr + 1) != '\0' &&  *(ptr + 1) != ' ')
+		if (*ptr == '%' && *(ptr + 1) != '\0')
 		{
 			ptr++;
 			fun = get_function(*ptr);
@@ -44,12 +47,13 @@ int _printf(const char *format, ...)
 			}
 			else if (helper(ptr))
 			{
+				if (*(ptr + 1) == 'd' || *(ptr + 1) == 'i')
+					num += _putchar(*ptr);
 				*ptr = '%';
-				num += _putchar('+');
 				
 			}
 			else
-			{
+			{				
 				ptr--;
 				num += _putchar(*ptr);
 				ptr++;
