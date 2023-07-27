@@ -1,6 +1,7 @@
 #include "main.h"
 #include <stdarg.h>
 #include <stdint.h>
+#include <unistd.h>
 /**
  * _putp - function prints addres
  *@args: Va_list
@@ -13,7 +14,12 @@ int _putp(va_list args)
 	int pos = 0;
 	int n = 2;
 
-
+	if (num == 0)
+	{
+		char *s = "(nil)";
+		write(1, s, 5);
+		return (5);
+	}
 	_putchar('0');
 	_putchar('x');
 

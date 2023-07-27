@@ -22,6 +22,11 @@ void add_to_buffer(Buffer *buffer, char c)
 	{
 		buffer->buffer[buffer->index++] = c;
 	}
+	if (buffer->index >= BUFFER_SIZE)
+	{
+		write(1, buffer->buffer, buffer->index);
+		buffer->index = 0;
+	}
 }
 
 /**
