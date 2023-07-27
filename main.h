@@ -1,6 +1,7 @@
 #ifndef MAIN_H
 #define MAIN_H
 #include <stdarg.h>
+#define BUFFER_SIZE 1020
 /**
  * struct fun - is datatype declaration
  * @p: hols chars
@@ -11,6 +12,21 @@ typedef struct fun
 	char p;
 	int (*call)(va_list);
 } fun_type;
+
+/**
+ * struct - typdef for buffer
+ * @buffer: char* buffer
+ * @index: index
+ */
+typedef struct {
+	char buffer[BUFFER_SIZE];
+	int index;
+} Buffer;
+
+void init_buffer(Buffer *buffer);
+void flush_buffer(Buffer *buffer);
+void add_to_buffer(Buffer *buffer, char c);
+int helper(char *);
 char *_strcpy(char *dest, const char *src);
 int _print_rev_recursion(char *s);
 int _putr(va_list args);

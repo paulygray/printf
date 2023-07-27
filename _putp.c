@@ -35,7 +35,11 @@ int _putp(va_list args)
 	}
 	return (n);
 }
-
+/**
+ * _putx - function handles %x
+ *@args: Va_list
+ * Return: num of digits
+ */
 int _putx(va_list args)
 {
 	char buffer[20];
@@ -47,12 +51,13 @@ int _putx(va_list args)
 	{
 		n++;
 		_putchar('0');
-		return n;
+		return (n);
 	}
 
 	while (num != 0)
 	{
 		int rem = num % 16;
+
 		if (rem < 10)
 			buffer[pos] = '0' + rem;
 		else
@@ -68,10 +73,10 @@ int _putx(va_list args)
 		_putchar(buffer[pos]);
 	}
 
-	return n;
+	return (n);
 }
 /**
- * _putX - function prints hexadecimal digits with uppercase for %X format specifier
+ * _putX - function prints hexadecimal digits with uppercase for
  * @args: va_list type
  * Return: number of digits printed
  */
@@ -86,12 +91,13 @@ int _putX(va_list args)
 	{
 		n++;
 		_putchar('0');
-		return n;
+		return (n);
 	}
 
 	while (num != 0)
 	{
 		int rem = num % 16;
+
 		if (rem < 10)
 			buffer[pos] = '0' + rem;
 		else
@@ -107,7 +113,7 @@ int _putX(va_list args)
 		_putchar(buffer[pos]);
 	}
 
-	return n;
+	return (n);
 }
 /**
  * _puto - function prints octal digits for %o format specifier
@@ -125,7 +131,7 @@ int _puto(va_list args)
 	{
 		n++;
 		_putchar('0');
-		return n;
+		return (n);
 	}
 
 	while (num != 0)
@@ -142,5 +148,5 @@ int _puto(va_list args)
 		_putchar(buffer[pos]);
 	}
 
-	return n;
+	return (n);
 }

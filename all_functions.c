@@ -64,7 +64,6 @@ fun_type get_function(char format)
 		{'c', _putc},
 		{'d', _putd},
 		{'i', _putd},
-		{'%', _putcc},
 		{'p', _putp},
 		{'u', _putU},
 		{'x', _putx},

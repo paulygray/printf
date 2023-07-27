@@ -3,11 +3,12 @@
 
 /**
  * rot13 - decode and encode function
- * @s: string to be encoded/decoded
+ * @args: argument passed through printf
  *
  * Return: Pointer to the modified string
  */
-int rot13(va_list args) {
+int rot13(va_list args)
+{
 	char c;
 	int n = 0;
 	const char *str = va_arg(args, char *);

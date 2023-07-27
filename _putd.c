@@ -2,7 +2,11 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include "main.h"
-
+/**
+ * _putU - function handles cas %u
+ * @args: va_list type
+ * Return: int
+ */
 int _putU(va_list args)
 {
 	char buffer[20];
@@ -14,7 +18,7 @@ int _putU(va_list args)
 	{
 		n++;
 		_putchar('0');
-		return n;
+		return (n);
 	}
 
 	while (num != 0)
@@ -31,9 +35,12 @@ int _putU(va_list args)
 		_putchar(buffer[pos]);
 	}
 
-	return n;
+	return (n);
 }
-
+/**
+ * case_min - function dealin INT_MIN
+ * Return: int
+ */
 int case_min(void)
 {
 	char minStr[] = "-2147483648";

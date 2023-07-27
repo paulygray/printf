@@ -60,6 +60,11 @@ int _putr(va_list args)
 	 _print_rev_recursion(s);
 	return (n);
 }
+/**
+ * _putS - funtion reverses
+ * @args: va_list type
+ * Return: int type
+ */
 int _putS(va_list args)
 {
 	char nonPrintabe[] = {'\n', '\r', '\t', '\b', '\f', '\v', '\0', '\a', '\x1B'};
@@ -69,32 +74,28 @@ int _putS(va_list args)
 
 	if (s == NULL)
 		s = "(null)";
-
 	while (*s)
 	{
 		int foundNonPrintable = 0;
+
 		for (i = 0; nonPrintabe[i] != '\0'; i++)
 		{
 			if (*s == nonPrintabe[i])
 			{
 				putchar('\\');
 				putchar('x');
-
 				ch = (unsigned char)*s;
 				putchar('0' + (ch / 16));
-
 				remainder = ch % 16;
 				if (remainder < 10)
 					putchar('0' + remainder);
 				else
 					putchar('A' + (remainder - 10));
-
 				s++;
 				foundNonPrintable = 1;
 				break;
 			}
 		}
-
 		if (!foundNonPrintable)
 		{
 			n++;
